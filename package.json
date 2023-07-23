@@ -1,0 +1,28 @@
+{
+  "name": "test-new-json-rpc-api",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "esbuild src/main.ts --platform=node --bundle --external:@polkadot/* --external:ws --outdir=build --target=esnext --format=esm --sourcemap",
+    "start": "npm run build && node --enable-source-maps ./build/main.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "@polkadot/api": "^10.9.1",
+    "@polkadot/api-augment": "^10.9.1",
+    "@polkadot/types-augment": "^10.9.1",
+    "@substrate/connect": "^0.7.30",
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/ws": "^8.5.5",
+    "esbuild": "^0.18.16",
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.6"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "trailingComma": "all",
+    "semi": false
+  }
+}
